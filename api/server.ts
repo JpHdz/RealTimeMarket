@@ -12,8 +12,17 @@ const wsServer = new WebSocketServer({ server });
 app.use(express.json());
 
 // Message queue from websocket
-wsServer.on("connextion", (socket) => {
+wsServer.on("connection", (socket) => {
   console.log("Cliente se ha conectado al socket");
+
+  socket.on("message", (msg) => {
+    const data = JSON.parse(msg.toString());
+    const clients = wsServer.clients;
+    for (const client of clients) {
+      client.send("Te llego una compra");
+    }
+    console.log(data);
+  });
 });
 
 // Endpoints using HTTP
