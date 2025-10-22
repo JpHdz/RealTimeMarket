@@ -1,0 +1,27 @@
+# Node.js dependencies and build output
+node_modules/
+
+# TypeScript build output
+*.tsbuildinfo
+dist/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# React/Vite specific files
+.vite/
+.vitepress/cache/
+*.cache
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+
+# System files
+.DS_Store
+Thumbs.db
